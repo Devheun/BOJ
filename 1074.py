@@ -2,14 +2,16 @@
 
 def func(x,y,n):
     global visited
-    if n==2: # 2*2 정사각형 모양일때
-        for i in range(2):
-            for j in range(2):
-                if x+i==r and x+j==c:
-                    print(visited+i+j)
-                    exit()
-                else:visited+=1
+    if x==r and y==c:
+        print(visited)
+        exit()
+    elif n==1: #최소단위 1X1 짜리
+        visited+=1
         return
+    elif not (x<=r<x+n and y<=c<y+n): # 지금 찾는 범위에 r과c가 없을 시
+        visited+=n*n
+        return
+        
     else:
         func(x,y,n//2)
         func(x,y+n//2,n//2)
