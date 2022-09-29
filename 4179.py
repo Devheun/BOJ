@@ -11,7 +11,7 @@ def bfs2(x,y):
         for i in range(4):
             nx=cur[0]+dx[i]
             ny=cur[1]+dy[i]
-            if nx<0 or nx>=r or ny<0 or ny>=c:
+            if nx<0 or nx>=r or ny<0 or ny>=c: # 범위 넘어선 건 탈출했다는 말
                 print(vis_ji[cur[0]][cur[1]]+1)
                 exit(0)
             if vis_ji[nx][ny]!=-1 or board[nx][ny]=='#':continue
