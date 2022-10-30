@@ -5,18 +5,15 @@ def dfs():
         print(' '.join(map(str,arr)))
         return
     
-    tmp=0
     
     for i in range(len(input_arr)):
         if arr:
-            if arr[-1]<=input_arr[i] and tmp!=input_arr[i]:
+            if arr[-1]<=input_arr[i]:
                 arr.append(input_arr[i])
-                tmp=input_arr[i]
                 dfs()
                 arr.pop()
         elif not arr:
             arr.append(input_arr[i])
-            tmp=input_arr[i]
             dfs()
             arr.pop()
             
